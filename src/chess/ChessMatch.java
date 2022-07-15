@@ -24,13 +24,14 @@ public class ChessMatch {
 	private ChessPiece enPassantVulnerable;
 	private ChessPiece promoted;
 
-	private List<Piece> piecesOnTheBoard = new ArrayList<>();
+	private List<Piece> piecesOnTheBoard;
 	private List<Piece> capturedPieces = new ArrayList<>();
 
 	public ChessMatch() {
 		board = new Board(8, 8);
 		turn = 1;
 		currentPlayer = Color.WHITE;
+		piecesOnTheBoard = new ArrayList<>();   // deixando instancia no constructor
 		initialSetup();
 	}
 
@@ -151,6 +152,8 @@ public class ChessMatch {
 		p.increaseMoveCount();
 		Piece capturedPiece = board.removePiece(target);
 		board.placePiece(p, target);
+
+		//verificação se peça esta com outra no local == **
 
 		if (capturedPiece != null) {
 			piecesOnTheBoard.remove(capturedPiece);
