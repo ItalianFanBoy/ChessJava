@@ -275,8 +275,8 @@ public class ChessMatch {
 				return (ChessPiece) p;
 			}
 		}
-		throw new IllegalStateException("There is no " + color + " king on the board");
-	}
+		throw new IllegalStateException("There is no " + color + " king on the board"); //deve jamais acontecer
+	} 
 
 	private boolean testCheck(Color color) {
 		Position kingPosition = king(color).getChessPosition().toPosition();
