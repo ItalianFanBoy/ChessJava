@@ -62,7 +62,7 @@ public class Rook extends ChessPiece {
 	}
 
 	@Override
-	protected ChessPosition getChessPosition() {
+	public ChessPosition getChessPosition() {
 		// TODO Auto-generated method stub
 		return null;
 	}
